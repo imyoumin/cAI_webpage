@@ -44,7 +44,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s ease; }
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 10vw;
+    padding: 15px 10vw; /* 간격 축소 */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s ease; }
 .logo a {
     display: flex;
     align-items: center;
-    gap: 15px; /* 마크와 글자 사이 간격 */
+    gap: 15px;
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-dark);
@@ -65,7 +65,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s ease; }
 }
 
 .nav-logo-img {
-    height: 38px; /* 마크 크기 고정 */
+    height: 38px;
     width: auto;
     object-fit: contain;
 }
@@ -75,6 +75,7 @@ nav a {
     margin-left: 30px;
     font-size: 0.95rem;
     font-weight: 400;
+    white-space: nowrap;
 }
 
 nav a:hover, nav a.active {
@@ -108,7 +109,7 @@ nav a:hover, nav a.active {
     display: block;
     font-size: 1rem;
     color: var(--accent-brown);
-    margin-bottom: 25px;
+    margin-bottom: 20px; /* 간격 축소 */
     letter-spacing: 5px;
     text-transform: uppercase;
 }
@@ -118,7 +119,7 @@ nav a:hover, nav a.active {
     font-size: clamp(2.5rem, 5vw, 4.8rem);
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: 35px;
+    margin-bottom: 30px; /* 간격 축소 */
 }
 
 .hero-desc {
@@ -129,7 +130,7 @@ nav a:hover, nav a.active {
 
 /* --- [5] Stats Section --- */
 .stats-section {
-    padding: 100px 10vw;
+    padding: 60px 10vw; /* 간격 축소 */
     background-color: var(--bg-ivory);
 }
 
@@ -138,61 +139,57 @@ nav a:hover, nav a.active {
     align-items: center;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 60px 0;
+    padding: 40px 0; /* 간격 축소 */
 }
 
 .stat-item { flex: 1; display: flex; flex-direction: column; align-items: center; }
-.stat-num { font-size: 3.5rem; font-weight: 200; color: var(--text-dark); margin-bottom: 10px; }
-.stat-label { font-size: 0.85rem; color: var(--accent-gray); letter-spacing: 2px; text-transform: uppercase; }
-.stat-divider { width: 1px; height: 80px; background-color: rgba(0, 0, 0, 0.08); }
+.stat-num { font-size: 3rem; font-weight: 200; color: var(--text-dark); margin-bottom: 8px; }
+.stat-label { font-size: 0.8rem; color: var(--accent-gray); letter-spacing: 2px; text-transform: uppercase; }
+.stat-divider { width: 1px; height: 60px; background-color: rgba(0, 0, 0, 0.08); }
 
-/* --- [6] Subpage Layout & Spacing (피드백 반영 최종 여백) --- */
+/* --- [6] Subpage Layout & Spacing --- */
 .subpage-header {
-    padding: 160px 10vw 60px; /* 헤더 설명글 하단 숨통 확보 */
+    padding: 120px 10vw 30px; /* 대폭 축소 */
     background-color: var(--white);
 }
 
 .subpage-header h2 { 
     font-size: clamp(2rem, 4vw, 3.2rem); 
     font-weight: 300; 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     font-family: 'Playfair Display', serif; 
 }
 
 .subpage-header p { 
     color: var(--accent-gray); 
-    font-size: 1.1rem; 
+    font-size: 1rem; 
     margin-bottom: 0; 
 }
 
 .content-section {
-    padding: 20px 10vw 140px;
+    padding: 10px 10vw 80px; /* 간격 축소 */
     background-color: var(--white);
 }
 
-/* 섹션 타이틀 (Journal, Projects 등) */
 .pub-section-title, .research-section-title, .creative-title {
-    font-size: 1.5rem; 
+    font-size: 1.4rem; 
     font-weight: 400; 
     color: var(--accent-brown);
-    margin: 100px 0 20px;
+    margin: 60px 0 15px; /* 간격 축소 */
     padding-bottom: 8px; 
     border-bottom: 1px solid rgba(166, 138, 100, 0.2);
 }
 
-/* 첫 번째 섹션 타이틀만 헤더와 시원하게 분리 (50px 마진) */
-.content-section .pub-section-title:first-of-type,
-.content-section .research-section-title:first-of-type,
-.content-section .creative-title:first-of-type {
-    margin-top: 50px;
+.content-section [class*="title"]:first-of-type {
+    margin-top: 20px !important; /* 첫 섹션 간격 최소화 */
 }
 
-/* --- [7] Professor Profile & CV Grid (Members 전용) --- */
+/* --- [7] Professor Profile (Members) --- */
 .director-profile {
     display: flex;
     gap: 60px;
     align-items: flex-start;
-    margin-bottom: 80px;
+    margin-bottom: 40px; /* 간격 축소 */
 }
 
 .director-photo {
@@ -202,71 +199,70 @@ nav a:hover, nav a.active {
 .director-photo img {
     width: 100%;
     border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
 }
 
 .profile-header {
-    margin-bottom: 50px; /* 성함/직함과 Bio 사이 넓은 간격 */
+    margin-bottom: 25px; /* 간격 축소 */
 }
 
-.profile-header h3 { font-size: 2.5rem; font-weight: 400; margin-bottom: 10px; }
+.profile-header h3 { font-size: 2.2rem; font-weight: 400; margin-bottom: 8px; }
 
 .bio-en { 
     font-style: italic; 
     color: var(--accent-gray); 
-    font-size: 1.05rem; 
-    margin-bottom: 35px; /* Bio 사이 간격 확보 */
+    font-size: 1rem; 
+    margin-bottom: 20px; /* 간격 축소 */
     border-left: 3px solid var(--accent-brown); 
-    padding-left: 25px; 
-    line-height: 1.8;
+    padding-left: 20px; 
+    line-height: 1.7;
 }
 
 .bio-ko { 
-    font-size: 1.1rem; 
+    font-size: 1.05rem; 
     color: var(--text-dark); 
-    line-height: 1.9;
+    line-height: 1.8;
     margin-top: 10px;
 }
 
 .cv-detailed-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 50px;
-    margin-top: 60px;
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .cv-group h4 { 
-    font-size: 1.15rem; 
+    font-size: 1.1rem; 
     color: var(--accent-brown); 
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
     text-transform: uppercase; 
     letter-spacing: 1.5px;
     border-bottom: 1px solid rgba(166, 138, 100, 0.2);
-    padding-bottom: 10px;
+    padding-bottom: 8px;
 }
 
 .cv-group ul { list-style: none; }
 .cv-group li {
-    font-size: 0.95rem; margin-bottom: 12px; color: var(--text-dark); line-height: 1.6;
+    font-size: 0.95rem; margin-bottom: 10px; color: var(--text-dark); line-height: 1.6;
     position: relative; padding-left: 15px;
 }
-/* 이중 불렛 방지 및 세련된 포인트 점 적용 */
 .cv-group li::before {
     content: "•"; position: absolute; left: 0; color: var(--accent-brown); font-weight: bold;
 }
 
 .cv-group li .year { color: var(--accent-gray); display: block; font-size: 0.85rem; margin-bottom: 2px; }
 
-/* --- [8] Lists Style (촘촘하고 정갈함 유지) --- */
+/* --- [8] Lists Style (Publications 등) --- */
 .list-row {
     display: flex;
-    padding: 18px 0; /* 슬림한 칸 높이 */
+    padding: 15px 0; 
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.list-category { flex: 0 0 200px; font-size: 0.95rem; color: var(--accent-brown); font-weight: 500; }
+.list-category { flex: 0 0 180px; font-size: 0.9rem; color: var(--accent-brown); font-weight: 500; }
 .list-info { flex: 1; }
-.list-title { font-size: 1.05rem; font-weight: 400; margin-bottom: 4px; color: var(--text-dark); line-height: 1.4; }
+.list-title { font-size: 1rem; font-weight: 400; margin-bottom: 4px; color: var(--text-dark); line-height: 1.4; }
 .list-desc { font-size: 0.85rem; color: var(--accent-gray); line-height: 1.4; }
 .author-highlight { font-weight: 600; color: var(--text-dark); }
 
@@ -275,48 +271,59 @@ nav a:hover, nav a.active {
     border: 1px solid var(--accent-brown); color: var(--accent-brown);
     border-radius: 20px; margin-bottom: 12px;
 }
-
 .copyright-tag { background: #f0f0f0; border: none; color: #666; border-radius: 3px; }
 
-/* --- [9] Footer --- */
+/* --- [9] Footer (컴팩트 정보 강화) --- */
 .minimal-footer {
-    padding: 100px 10vw;
+    padding: 40px 10vw; /* 대폭 축소 */
     background-color: var(--bg-ivory);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.footer-inner { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 30px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; }
+.footer-info { flex: 2; }
+.footer-info strong { display: block; font-size: 1rem; margin-bottom: 10px; color: var(--text-dark); }
+.footer-info p { font-size: 0.85rem; color: var(--accent-gray); line-height: 1.6; margin-bottom: 10px; }
+.footer-copyright p { font-size: 0.75rem; color: rgba(0, 0, 0, 0.3); }
 
-/* --- [10] Responsive Media Queries (절대 깨지지 않는 최적화) --- */
+.footer-links { flex: 1; text-align: right; }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 5px; }
+.footer-links a { font-size: 0.85rem; color: var(--accent-gray); }
+.footer-links a:hover { color: var(--accent-brown); }
 
+/* --- [10] Responsive Media Queries (절대 안깨짐) --- */
 @media (max-width: 1024px) {
-    .navbar { padding: 20px 5vw; }
+    .navbar { padding: 15px 5vw; }
     .director-profile { gap: 40px; }
     .director-photo { flex: 0 0 280px; }
 }
 
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 15px 5vw; gap: 15px; }
+    .navbar { flex-direction: column; padding: 15px 5vw; gap: 10px; }
     nav a { margin: 0 8px; font-size: 0.85rem; }
     
-    .hero { text-align: center; }
+    .hero { text-align: center; padding-top: 80px; }
     #canvas-container { width: 100%; height: 50%; bottom: 0; top: auto; opacity: 0.3; }
+    .hero-content { margin: 0 auto; }
 
-    .stat-container { flex-direction: column; }
+    .stat-container { flex-direction: column; padding: 30px 0; }
     .stat-divider { display: none; }
     
-    .subpage-header { padding: 140px 5vw 40px; text-align: center; }
-    .content-section { padding: 0 5vw 80px; }
+    .subpage-header { padding: 120px 5vw 30px; text-align: center; }
+    .content-section { padding: 0 5vw 60px; }
 
     .director-profile { flex-direction: column; align-items: center; text-align: center; }
     .director-photo { width: 80%; max-width: 300px; }
-    .bio-en { border-left: none; border-top: 3px solid var(--accent-brown); padding: 20px 0 0; }
+    .bio-en { border-left: none; border-top: 3px solid var(--accent-brown); padding: 15px 0 0; }
 
     .list-row { flex-direction: column; gap: 10px; }
     .list-category { flex: none; }
     
     .cv-detailed-grid { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-links { text-align: left; margin-top: 20px; }
+    .footer-links ul { display: flex; flex-wrap: wrap; gap: 15px; }
 }
 
 @media (max-width: 480px) {
