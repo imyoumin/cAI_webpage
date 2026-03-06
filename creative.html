@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Works - Culture AI Lab (cAI)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Creative 페이지 전용 스타일: 간격 최적화 */
+        .creative-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--accent-brown);
+            margin: 100px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(166, 138, 100, 0.2);
+            font-weight: 400;
+        }
+        /* 첫 번째 섹션 타이틀 상단 마진 제거 */
+        .creative-section:first-of-type .creative-title {
+            margin-top: 10px;
+        }
+        .creative-section {
+            margin-bottom: 60px;
+        }
+        .work-card {
+            margin-bottom: 0;
+            padding: 15px 0; /* 칸 높이 축소 */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .work-year {
+            font-size: 0.9rem;
+            color: var(--accent-brown);
+            font-weight: 500;
+        }
+        .work-title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+        .work-role {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-brown);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .work-desc {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--accent-gray);
+        }
+        .copyright-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            background: #f0f0f0;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-top: 8px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/mark.png" alt="cAI Lab Mark" class="nav-logo-img">
+                <span>Culture AI Lab (cAI)</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="creative.html" class="active">Creative</a>
+            <a href="members.html">Members</a>
+        </nav>
+    </header>
+
+    <section class="subpage-header">
+        <h2>Creative Works</h2>
+        <p>인문학적 통찰과 스토리텔링을 통해 예술의 새로운 가치를 창출합니다.</p>
+    </section>
+
+    <section class="content-section">
+        
+        <div class="creative-section">
+            <h3 class="creative-title">Drama & Film Scenarios</h3>
+            
+            <div class="work-card">
+                <div class="work-header">
+                    <h4 class="work-title">《빙배: 잔에 깃든 원혼》</h4>
+                    <span class="work-year">2026</span>
+                </div>
+                <span class="work-role">Drama Scenario / Author</span>
+                <p class="work-desc">한국 전통 소재를 바탕으로 한 미스터리 드라마 시나리오.</p>
+                <span class="copyright-tag">한국저작권협회 등록 완료</span>
+            </div>
+
+            <div class="work-card">
+                <div class="work-header">
+                    <h4 class="work-title">《바게트를 든 수녀들》</h4>
+                    <span class="work-year">2025</span>
+                </div>
+                <span class="work-role">Drama Scenario / Author</span>
+                <p class="work-desc">인간미 넘치는 서사와 유머를 담은 현대 드라마 시나리오.</p>
+                <span class="copyright-tag">한국저작권협회 등록 완료</span>
+            </div>
+
+            <div class="work-card">
+                <div class="work-header">
+                    <h4 class="work-title">영화 &lt;한반도&gt;</h4>
+                    <span class="work-year">2004</span>
+                </div>
+                <span class="work-role">Original Story / Film Author</span>
+                <p class="work-desc">강우석 감독 연출작. 역사적 상상력을 바탕으로 한 블록버스터 영화의 원작 시나리오 제공.</p>
+            </div>
+        </div>
+
+        <div class="creative-section">
+            <h3 class="creative-title">Exhibition & Media Showcases</h3>
+
+            <div class="work-card">
+                <div class="work-header">
+                    <h4 class="work-title">《드러내고, 숨쉬다 (Unveiling and Breathing Resonance)》</h4>
+                    <span class="work-year">2025</span>
+                </div>
+                <span class="work-role">Creative Director</span>
+                <p class="work-desc">데이터와 예술의 공존을 주제로 한 최신 미디어 쇼케이스의 총괄 기획 및 디렉팅.</p>
+            </div>
+
+            <div class="work-card">
+                <div class="work-header">
+                    <h4 class="work-title">From Tangible to Intangible: A media showcase of Kisa chin p’yori chinch’an uigwe</h4>
+                    <span class="work-year">2020. 01</span>
+                </div>
+                <span class="work-role">Exhibition Director</span>
+                <p class="work-desc">주영한국문화원(런던) 전시. 조선 왕실 의궤를 디지털 매체로 전환하여 한국 전통 문화유산의 미학을 세계에 알린 미디어 쇼케이스.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="minimal-footer">
+        <div class="footer-inner">
+            <div class="footer-info">
+                <strong>Culture Artificial Intelligence Lab (cAI)</strong>
+                <p>중앙대학교 다빈치캠퍼스 810관 8611호<br>T. 031-670-3183 &nbsp;|&nbsp; E. boateresa@cau.ac.kr</p>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2026 CAU Culture AI Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
