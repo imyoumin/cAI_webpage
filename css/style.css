@@ -217,10 +217,10 @@ nav a:hover, nav a.active {
     margin-top: 10px;
 }
 
-/* --- [8] CV Grid (Toggle & Animation 기능 추가) --- */
+/* --- [8] CV Grid (Toggle 기능 핵심) --- */
 .cv-detailed-grid {
     display: grid; 
-    grid-template-columns: 1fr; /* 토글 가독성을 위해 한 줄로 정렬 */
+    grid-template-columns: 1fr; 
     gap: 15px;
     margin-top: 60px;
 }
@@ -231,7 +231,6 @@ nav a:hover, nav a.active {
     transition: all 0.3s ease;
 }
 
-/* 토글 헤더 */
 .cv-toggle-header {
     display: flex;
     justify-content: space-between;
@@ -246,12 +245,9 @@ nav a:hover, nav a.active {
     color: var(--accent-brown); 
     text-transform: uppercase; 
     letter-spacing: 1.5px;
-    margin: 0 !important; /* 기존 마진 제거 */
-    border-bottom: none !important; /* 토글 구조를 위해 제거 */
-    padding-bottom: 0 !important;
+    margin: 0 !important;
 }
 
-/* 토글 아이콘 (+/-) */
 .toggle-icon::after {
     content: '+';
     font-family: 'Playfair Display', serif;
@@ -264,16 +260,16 @@ nav a:hover, nav a.active {
     content: '−';
 }
 
-/* 슬라이딩 애니메이션 핵심 로직 */
+/* 슬라이딩 애니메이션 */
 .cv-toggle-content {
     display: grid;
-    grid-template-rows: 0fr; /* 닫혔을 때 높이 0 */
+    grid-template-rows: 0fr; 
     transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 
 .cv-group.active .cv-toggle-content {
-    grid-template-rows: 1fr; /* 열렸을 때 내용물만큼 높이 확보 */
+    grid-template-rows: 1fr; 
 }
 
 .cv-inner-content {
@@ -282,7 +278,7 @@ nav a:hover, nav a.active {
 
 .cv-inner-content ul {
     list-style: none;
-    padding: 0 25px 25px 25px; /* 헤더 여백과 맞춤 */
+    padding: 0 25px 25px 25px;
 }
 
 .cv-group li {
@@ -302,19 +298,12 @@ nav a:hover, nav a.active {
     font-weight: bold;
 }
 
-.cv-group li .year { 
-    color: var(--accent-brown); 
-    font-weight: 500; 
-    display: inline-block; 
-    margin-bottom: 2px;
-}
-
 .cv-group.active {
     border-color: var(--accent-brown);
     box-shadow: 0 5px 15px rgba(0,0,0,0.03);
 }
 
-/* --- [9] Lists Style (수평 정렬 해결 - baseline 적용) --- */
+/* --- [9] Lists Style --- */
 .list-row {
     display: flex;
     align-items: baseline; 
@@ -329,20 +318,9 @@ nav a:hover, nav a.active {
     font-weight: 500;
 }
 
-.list-info { 
-    flex: 1; 
-}
-
-.list-title { 
-    font-size: 1.05rem; 
-    font-weight: 400; 
-    margin: 0 0 4px 0 !important; 
-    color: var(--text-dark); 
-    line-height: 1.4; 
-}
-
+.list-info { flex: 1; }
+.list-title { font-size: 1.05rem; font-weight: 400; margin-bottom: 4px; color: var(--text-dark); line-height: 1.4; }
 .list-desc { font-size: 0.85rem; color: var(--accent-gray); line-height: 1.4; }
-.author-highlight { font-weight: 600; color: var(--text-dark); }
 
 .project-tag {
     display: inline-block;
@@ -354,7 +332,7 @@ nav a:hover, nav a.active {
     margin-bottom: 5px;
 }
 
-/* --- [10] 슬림 Footer --- */
+/* --- [10] Footer --- */
 .minimal-footer {
     padding: 50px 10vw; 
     background-color: var(--bg-ivory);
@@ -376,48 +354,10 @@ nav a:hover, nav a.active {
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 8px; }
 .footer-links a { font-size: 0.85rem; color: var(--accent-gray); }
-.footer-links a:hover { color: var(--accent-brown); }
 
-/* --- [11] Responsive Media Queries --- */
-@media (max-width: 1024px) {
-    .navbar { padding: 20px 5vw; }
-    nav a { margin-left: 20px; }
-    .director-profile { gap: 40px; }
-    .director-photo { flex: 0 0 280px; }
-}
-
-@media (max-width: 768px) {
-    .navbar { flex-direction: column; padding: 15px 5vw; gap: 15px; }
-    nav a { margin: 0 8px; font-size: 0.85rem; }
-    .hero { text-align: center; }
-    #canvas-container { width: 100%; height: 50%; bottom: 0; top: auto; opacity: 0.3; }
-    .stat-container { flex-direction: column; }
-    .subpage-header { padding: 140px 5vw 40px; text-align: center; }
-    .content-section { padding: 0 5vw 80px; }
-    .director-profile { flex-direction: column; align-items: center; text-align: center; }
-    .director-photo { width: 80%; max-width: 300px; }
-    .bio-en { border-left: none; border-top: 3px solid var(--accent-brown); padding: 20px 0 0; }
-    .list-row { flex-direction: column; gap: 10px; align-items: flex-start; }
-    .list-category { flex: none; }
-}
-
-/* --- [12] Members & Alumni Section --- */
-.members-list-section {
-    margin-top: 40px;
-}
-
-.members-main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: var(--text-dark);
-    margin-bottom: 40px;
-    font-weight: 400;
-}
-
-.member-category {
-    margin-bottom: 80px;
-}
-
+/* --- [11] Members & Alumni --- */
+.members-list-section { margin-top: 40px; }
+.member-category { margin-bottom: 80px; }
 .member-category h3 {
     font-size: 1.1rem;
     color: var(--accent-brown);
@@ -427,67 +367,21 @@ nav a:hover, nav a.active {
     border-bottom: 1px solid rgba(166, 138, 100, 0.2);
     padding-bottom: 10px;
 }
-
 .member-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 40px;
 }
+.member-card { transition: transform 0.3s ease; }
+.member-card:hover { transform: translateY(-5px); }
+.member-img { width: 100%; aspect-ratio: 3 / 3.8; background-color: #F0F0F0; margin-bottom: 18px; overflow: hidden; border-radius: 2px; }
+.member-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 0.4s ease; }
+.member-card:hover .member-img img { filter: grayscale(0%); }
+.member-text .name { display: block; font-size: 1.1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+.member-text .dept { font-size: 0.88rem; color: var(--accent-gray); font-weight: 300; }
 
-.member-card {
-    transition: transform 0.3s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-5px);
-}
-
-.member-img {
-    width: 100%;
-    aspect-ratio: 3 / 3.8;
-    background-color: #F0F0F0;
-    margin-bottom: 18px;
-    overflow: hidden;
-    border-radius: 2px;
-}
-
-.member-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.4s ease;
-}
-
-.member-card:hover .member-img img {
-    filter: grayscale(0%);
-}
-
-.member-text .name {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-}
-
-.member-text .dept {
-    font-size: 0.88rem;
-    color: var(--accent-gray);
-    font-weight: 300;
-}
-
-.alumni-section {
-    margin-top: 100px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    padding-top: 60px;
-}
-
-.alumni-toggle {
-    background-color: var(--bg-ivory);
-    border: 1px solid rgba(166, 138, 100, 0.15);
-}
-
+/* Alumni Toggle */
+.alumni-toggle { background-color: var(--bg-ivory); border: 1px solid rgba(166, 138, 100, 0.15); }
 .alumni-toggle summary {
     padding: 22px 30px;
     font-size: 1rem;
@@ -498,43 +392,78 @@ nav a:hover, nav a.active {
     justify-content: space-between;
     align-items: center;
 }
+.alumni-toggle summary::after { content: '+'; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--accent-brown); }
+.alumni-toggle[open] summary::after { content: '−'; }
+.alumni-table { width: 100%; border-collapse: collapse; }
+.alumni-table th { text-align: left; font-size: 0.85rem; color: var(--accent-brown); padding: 12px 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+.alumni-table td { padding: 15px 10px; font-size: 0.92rem; border-bottom: 1px solid rgba(0, 0, 0, 0.03); }
 
-.alumni-toggle summary::-webkit-details-marker { display: none; }
+/* ============================================================
+   [12] RESPONSIVE MEDIA QUERIES (모바일 대응 추가 섹션)
+   기존 코드를 건드리지 않고 아래에 추가하여 덮어씌웁니다.
+   ============================================================ */
 
-.alumni-toggle summary::after {
-    content: '+';
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--accent-brown);
+@media (max-width: 1024px) {
+    .navbar { padding: 20px 5vw; }
+    nav a { margin-left: 20px; }
 }
 
-.alumni-toggle[open] summary::after {
-    content: '−';
+@media (max-width: 768px) {
+    /* 네비게이션 가로 배열 유지하되 폰트 축소 및 자동 줄바꿈 */
+    .navbar { 
+        flex-direction: column; 
+        padding: 15px 5vw; 
+        gap: 10px; 
+        text-align: center;
+    }
+    .logo a { gap: 10px; font-size: 1rem; }
+    .nav-logo-img { height: 30px; }
+    nav { margin-top: 5px; display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px 10px; font-size: 0.85rem; }
+
+    /* 히어로 섹션 */
+    .hero { padding: 0 5vw; text-align: center; justify-content: center; }
+    #canvas-container { 
+        width: 100%; 
+        height: 50%; 
+        bottom: 0; 
+        top: auto; 
+        opacity: 0.3; 
+        pointer-events: none; /* 터치 방해 금지 */
+    }
+    .hero-content { margin-top: -50px; }
+    .hero-title { font-size: 2.2rem; margin-bottom: 20px; }
+    .hero-desc { font-size: 1rem; margin: 0 auto; }
+
+    /* 통계 섹션 세로 정렬 */
+    .stat-container { flex-direction: column; padding: 40px 0; gap: 30px; }
+    .stat-num { font-size: 2.8rem; }
+
+    /* 서브페이지 헤더 */
+    .subpage-header { padding: 140px 5vw 40px; text-align: center; }
+    .content-section { padding: 0 5vw 80px; }
+
+    /* 교수 프로필 세로 정렬 */
+    .director-profile { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
+    .director-photo { flex: none; width: 100%; max-width: 280px; }
+    .bio-en { border-left: none; border-top: 3px solid var(--accent-brown); padding: 20px 0 0; text-align: left; }
+    .bio-ko { text-align: left; }
+
+    /* 리스트 형태 세로 정렬 */
+    .list-row { flex-direction: column; align-items: flex-start; gap: 5px; padding: 20px 0; }
+    .list-category { flex: none; font-size: 0.85rem; }
+
+    /* 멤버 그리드 간격 조정 */
+    .member-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+    .member-img { margin-bottom: 12px; }
+
+    /* 푸터 */
+    .footer-inner { flex-direction: column; text-align: center; align-items: center; gap: 30px; }
+    .footer-links { text-align: center; }
 }
 
-.alumni-content {
-    padding: 30px;
-    background-color: var(--white);
-    border-top: 1px solid rgba(166, 138, 100, 0.1);
-}
-
-.alumni-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.alumni-table th {
-    text-align: left;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--accent-brown);
-    padding: 12px 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.alumni-table td {
-    padding: 15px 10px;
-    font-size: 0.92rem;
-    color: var(--text-dark);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+@media (max-width: 480px) {
+    .hero-title { font-size: 1.8rem; }
+    .stat-num { font-size: 2.5rem; }
+    .member-grid { grid-template-columns: 1fr 1fr; } /* 아주 작은 화면에서도 2열 */
 }
